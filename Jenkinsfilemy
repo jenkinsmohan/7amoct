@@ -1,11 +1,18 @@
 pipeline{
     agent any
     stages{
-        stage('hello'){
+        stage('scm checkout'){
             steps{
-                echo "welcome to declarative pipeline this is correct"
+                git credentialsId: 'jenkinsmohan', 
+                url: 'https://github.com/jenkinsmohan/7amoct',
+                branch: 'master'
           }
         }
+        stage('Maven Build'){
+            steps{
+                sh "maven clean package"
+          }
     }
 
+}
 }
