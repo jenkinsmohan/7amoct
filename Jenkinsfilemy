@@ -3,7 +3,7 @@ pipeline{
     stages{
         stage('hello'){
             steps{
-                echo "welcome to declarative pipeline"
+                echo "welcome to declarative pipeline this is correct"
           }
         }
     }
